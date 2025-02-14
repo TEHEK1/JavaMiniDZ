@@ -8,16 +8,24 @@ public class AnimalFactory {
     public Animal createAnimal(String type) {
         switch (type.toLowerCase()) {
             case "monkey":
-                return new Monkey();
+                return setFood(setKindness(new Monkey()));
             case "rabbit":
-                return new Rabbit();
+                return setFood(setKindness(new Rabbit()));
             case "wolf":
-                return new Wolf();
+                return setFood(new Wolf());
             case "tiger":
-                return new Tiger();
+                return setFood(new Tiger());
             default:
                 throw new IllegalArgumentException("Неизвестный тип предмета: " + type);
         }
+    }
+    Animal setFood(Animal animal) {
+        animal.setFood(Math.abs(new Random().nextInt() % 10));
+        return animal;
+    }
+    Herbo setKindness(Herbo herbo) {
+        herbo.setKindness(new Random().nextInt() % 10);
+        return herbo;
     }
 }
 

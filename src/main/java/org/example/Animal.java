@@ -1,6 +1,6 @@
 package org.example;
 
-abstract public class Animal implements IInventory, IAlive {
+abstract public class Animal implements IInventory, IAlive, INamed {
     private int food;
     private int number;
     @Override
@@ -21,5 +21,10 @@ abstract public class Animal implements IInventory, IAlive {
     @Override
     final public int getNumber() {
         return number;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + " " + getNumber();
     }
 }

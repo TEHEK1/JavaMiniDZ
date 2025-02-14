@@ -4,11 +4,11 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 @Repository
-public class InventoryRepository {
+public class ThingRepository {
     private final List<IInventory> inventory = new ArrayList<>();
 
-    public void addInventoryItem(IInventory item) {
-        inventory.add(item);
+    public void addThing(Thing thing) {
+        inventory.add(thing);
     }
 
     public List<IInventory> getAllInventory() {
